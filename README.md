@@ -1,165 +1,148 @@
-# 通用领域Abstract收集器
+# Academic Abstract Collection System
 
-一个可扩展的学术论文abstract收集系统，支持多个研究领域。
+A scalable system to collect academic paper abstracts from Semantic Scholar across multiple research fields, with strict quality and continuity requirements.
 
-## 🚀 特性
+## Features
 
-- **多领域支持**: CS, Chemistry, Biology, Physics, Medicine
-- **可扩展设计**: 通过学者名单文件轻松添加新领域
-- **连续发表检测**: 找到连续4年(2021-2024)第一/二作者发表论文的研究者
-- **API优化**: 支持Semantic Scholar API key，提高请求限制
-- **进度保存**: 支持中断恢复，避免重复工作
+- Multi-field support: CS, Chemistry, Biology, Physics, Medicine (extensible)
+- Scholar list driven: load field-specific scholar names from `scholars/{FIELD}_scholars.txt`
+- Strict continuity: finds authors with first/second-author papers in each year 2021–2024
+- Exactly one paper per year per author (highest citation count); 4 files per qualified author
+- Abstract completeness: authors with any missing abstract are skipped entirely
+- Caching and resume: avoids repeated API calls and supports interruption recovery
+- Incremental fill: preserve existing results and only top-up missing authors
+- Reporting: generates a summary report with real saved files
 
-## 📁 项目结构
+## Repository Layout
 
 ```
 abstract_collection/
 ├── src/
-│   └── cs_abstract_collector.py  # 主程序（已重命名为通用收集器）
+│   └── cs_abstract_collector.py     # Main collector (generic, multi-field)
 ├── scholars/
-│   └── cs_scholars.txt           # CS领域学者名单
-├── output_CS/                    # CS领域输出目录
+│   └── cs_scholars.txt              # CS field scholar list (one name per line)
+├── run_incremental.py               # Incremental top-up runner
 ├── requirements.txt
-└── README.md
+├── README.md
+├── DEBUG_GUIDE.md                   # Optional: debug-mode instructions
+├── INCREMENTAL_GUIDE.md             # Optional: incremental-mode instructions
+├── OPTIMIZED_LOGIC.md               # Optional: logic summary
+└── output_CS/                       # Output directory (gitignored)
 ```
 
-## 🛠️ 安装与使用
+## Requirements
 
-### 1. 安装依赖
+- Python 3.9+
+- A Semantic Scholar API key (recommended for stable rate limits)
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. 配置API Key
+## Configure
 
-在 `src/cs_abstract_collector.py` 中设置你的Semantic Scholar API key：
+- Obtain a Semantic Scholar API key: `https://www.semanticscholar.org/product/api/tutorial`
+- Ensure your scholar list exists under `scholars/{FIELD}_scholars.txt` (e.g., `scholars/cs_scholars.txt`).
+
+## Usage
+
+### Standard run (first pass)
+
+Find up to 25 qualified authors (each with 4 abstracts, one per year 2021–2024) and save files to `output_{FIELD}`.
 
 ```python
-api_key = "your_api_key_here"
+# src/cs_abstract_collector.py (main section)
+api_key = "YOUR_SEMANTIC_SCHOLAR_API_KEY"
+field = "CS"  # Options: "CS", "CHEMISTRY", "BIOLOGY", "PHYSICS", "MEDICINE"
+
+collector = AbstractCollector(field=field, output_dir=f"output_{field}", api_key=api_key)
+collector.run(target_authors=25)
 ```
 
-### 3. 运行程序
+Run it:
 
 ```bash
-cd src
-python cs_abstract_collector.py
+python src/cs_abstract_collector.py
 ```
 
-## 📚 学者名单文件格式
+Outputs:
+- Files: `Academic_{Field}_{Year}_{Index}.txt` (Index is the author index; same author has the same index across 4 years)
+- Report: `output_{FIELD}/collection_report.txt`
 
-学者名单文件位于 `scholars/` 目录，命名格式：`{field}_scholars.txt`
-
-### 文件格式示例：
-
+Example for one author (index 01):
 ```
-# CS领域学者名单
-# 每行一个学者姓名，支持注释（以#开头）
+Academic_CS_2021_01.txt
+Academic_CS_2022_01.txt
+Academic_CS_2023_01.txt
+Academic_CS_2024_01.txt
+```
 
-# ===== 资深学者 =====
+### Incremental top-up (only fill missing authors)
+
+If the first run produced fewer than target authors (e.g., 20/25):
+
+```bash
+python run_incremental.py
+```
+
+What it does:
+- Scans existing `output_{FIELD}` and counts complete authors
+- Finds only the missing number of authors (e.g., 5 more to reach 25)
+- Assigns next continuous indices (e.g., 21–25)
+- Saves files and updates the report
+
+## Data Quality Rules (strict)
+
+- Field relevance: paper title/venue/abstract must include field keywords
+- Author position: only first or second author papers are eligible
+- Year span: must have papers in each of 2021, 2022, 2023, 2024
+- Abstract completeness: if any chosen paper lacks an abstract, skip the entire author
+- One-per-year: choose one paper per year (highest citation count)
+
+## Scholar List Format
+
+- File: `scholars/{FIELD}_scholars.txt`
+- One scholar name per line; lines starting with `#` are comments
+
+Example (`scholars/cs_scholars.txt`):
+```
+# CS Field Scholars List
+# Each line is a scholar's name, comments start with #
+
+# ===== Senior Scholars =====
 Yoshua Bengio
 Geoffrey Hinton
 Yann LeCun
-Andrew Ng
-
-# ===== 机器学习专家 =====
-Kaiming He
-Ross Girshick
-Ilya Sutskever
+...
 ```
 
-## 🔧 添加新领域
+## Rate Limiting
 
-### 1. 创建学者名单文件
+- With API key: ~1 request/second. The collector applies a small buffer and caching to avoid throttling.
 
-在 `scholars/` 目录下创建新的学者名单文件，例如 `chemistry_scholars.txt`
+## Output Files
 
-### 2. 修改程序配置
-
-在 `src/cs_abstract_collector.py` 中：
-
-```python
-# 修改领域
-field = "Chemistry"  # 新领域
-collector = AbstractCollector(field=field, output_dir=f"output_{field}", api_key=api_key)
+- Naming: `Academic_{Field}_{Year}_{Index}.txt`
+- Content template:
 ```
-
-### 3. 添加领域关键词（可选）
-
-在 `_get_field_keywords()` 方法中添加新领域的关键词：
-
-```python
-'CHEMISTRY': [
-    'chemistry', 'chemical', 'molecule', 'compound', 'synthesis',
-    'reaction', 'catalyst', 'organic', 'inorganic', 'analytical'
-]
-```
-
-## 📊 输出格式
-
-### 文件命名规则
-
-```
-Academic_{Field}_{Year}_{Index}.txt
-```
-
-例如：
-- `Academic_CS_2021_01.txt` - CS领域2021年，作者索引01
-- `Academic_CS_2022_01.txt` - CS领域2022年，作者索引01（同一作者）
-
-### 文件内容格式
-
-```
-Title: 论文标题
+Author: <Name>
+Title: <Title>
+Paper ID: <Semantic Scholar Paper ID>
+Year: <Year>
+Author Index: <Index>
 
 Abstract:
-论文摘要内容...
+<Full abstract text>
 ```
 
-## 🎯 使用场景
+## Tips
 
-### CS领域示例
+- If you change logic, rerun incrementally to avoid reprocessing qualified authors
+- Ensure `output_{FIELD}/` has enough space (up to 100 text files per field per full run)
+- Use the generated report to verify file counts by year and author completeness
 
-```python
-field = "CS"
-collector = AbstractCollector(field=field, output_dir="output_CS", api_key=api_key)
-collector.run(target_authors=20)  # 找20个连续4年第一/二作者
-```
-
-### 化学领域示例
-
-```python
-field = "Chemistry"
-collector = AbstractCollector(field=field, output_dir="output_Chemistry", api_key=api_key)
-collector.run(target_authors=20)
-```
-
-## 📈 扩展计划
-
-- [ ] 添加更多领域支持
-- [ ] 支持自定义年份范围
-- [ ] 添加论文质量筛选
-- [ ] 支持批量处理多个领域
-- [ ] 添加Web界面
-
-## 🔍 技术细节
-
-- **API限制**: 1请求/秒（使用API key）
-- **搜索策略**: 学者名单 + 论文关键词搜索
-- **筛选条件**: 年份(2021-2024) + 领域关键词 + 作者位置(第一/二作者)
-- **连续性要求**: 严格连续4年每年都有论文发表
-
-## 📝 注意事项
-
-1. **API Key**: 建议申请Semantic Scholar API key以提高请求限制
-2. **网络稳定**: 确保网络连接稳定，程序会自动处理限流
-3. **存储空间**: 每个领域约产生80-100个文件，请确保有足够存储空间
-4. **运行时间**: 完整运行可能需要数小时，程序支持进度保存和恢复
-
-## 🤝 贡献
-
-欢迎提交Issue和Pull Request来改进这个项目！
-
-## 📄 许可证
+## License
 
 MIT License
