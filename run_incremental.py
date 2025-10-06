@@ -21,7 +21,7 @@ def main():
     # Configuration
     api_key = "ba46hmA8hP1k1MzFVloTC2S2VbTAFwPD11wD6Mr7"
     field = "CS"
-    target_authors = 4  # Adjust as needed
+    target_authors = 20  # Adjust as needed
     
     # Create collector
     collector = AbstractCollector(field=field, output_dir=f"output_{field}", api_key=api_key)

@@ -1,6 +1,6 @@
 """
 Universal Field Continuous Author Paper Abstract Collector
-Goal: Find researchers who continuously published papers as any author from 2020-2024
+Goal: Find researchers who continuously published papers as any author in top conferences from 2020-2024
 Output: Abstract files saved as Academic_Field_Year_Index.txt
 Supports different fields through scholar list files
 """
@@ -37,6 +37,9 @@ class AbstractCollector:
             
         # Set keywords based on field
         self.field_keywords = self._get_field_keywords()
+        
+        # Set top conferences based on field
+        self.top_conferences = self._get_top_conferences()
         
         # Create output directory (ensure absolute path)
         if not os.path.isabs(output_dir):
@@ -87,6 +90,84 @@ class AbstractCollector:
             ]
         }
         return keywords_map.get(self.field, keywords_map['CS'])
+        
+    def _get_top_conferences(self) -> List[str]:
+        """Return top conference/journal names based on field"""
+        conferences_map = {
+            'CS': [
+                # AI/ML
+                'NeurIPS', 'ICML', 'ICLR', 'AAAI', 'IJCAI',
+                # Computer Vision
+                'CVPR', 'ICCV', 'ECCV',
+                # NLP
+                'ACL', 'EMNLP', 'NAACL',
+                # Database
+                'SIGMOD', 'VLDB', 'ICDE',
+                # Networks
+                'SIGCOMM', 'INFOCOM', 'NSDI',
+                # Software Engineering
+                'ICSE', 'FSE', 'ASE',
+                # Security
+                'IEEE S&P', 'USENIX Security', 'CCS',
+                # HCI
+                'CHI', 'UIST', 'CSCW',
+                # Theory
+                'STOC', 'FOCS', 'SODA',
+                # Systems
+                'OSDI', 'SOSP', 'ASPLOS',
+                # Web
+                'WWW', 'KDD', 'WSDM'
+            ],
+            'CHEMISTRY': [
+                # Top Journals
+                'Nature', 'Science', 'JACS', 'Angewandte Chemie',
+                'Chemical Reviews', 'Chemical Society Reviews',
+                'Nature Chemistry', 'Nature Materials',
+                'Advanced Materials', 'Chemistry of Materials',
+                'Inorganic Chemistry', 'Organic Letters',
+                'Journal of Organic Chemistry', 'Analytical Chemistry',
+                'Journal of Physical Chemistry', 'Physical Chemistry Chemical Physics',
+                # Top Conferences
+                'ACS National Meeting', 'Gordon Research Conferences',
+                'International Symposium on Organometallic Chemistry'
+            ],
+            'BIOLOGY': [
+                # Top Journals
+                'Nature', 'Science', 'Cell', 'Nature Methods',
+                'Nature Biotechnology', 'Nature Genetics',
+                'Nature Medicine', 'Nature Immunology',
+                'PLOS Biology', 'Current Biology',
+                'Genome Research', 'Molecular Cell',
+                'Developmental Cell', 'Cell Stem Cell',
+                'Immunity', 'Nature Reviews Immunology',
+                # Top Conferences
+                'Keystone Symposia', 'Cold Spring Harbor',
+                'Gordon Research Conferences', 'FASEB'
+            ],
+            'PHYSICS': [
+                # Top Journals
+                'Nature', 'Science', 'Physical Review Letters',
+                'Physical Review', 'Nature Physics',
+                'Physical Review X', 'Reviews of Modern Physics',
+                'Nature Materials', 'Advanced Materials',
+                'Applied Physics Letters', 'Journal of Applied Physics',
+                # Top Conferences
+                'American Physical Society', 'March Meeting',
+                'Gordon Research Conferences'
+            ],
+            'MEDICINE': [
+                # Top Journals
+                'Nature', 'Science', 'NEJM', 'The Lancet',
+                'JAMA', 'Nature Medicine', 'Cell',
+                'Nature Reviews', 'BMJ', 'Annals of Internal Medicine',
+                'PLOS Medicine', 'Nature Genetics',
+                'Nature Immunology', 'Nature Cancer',
+                # Top Conferences
+                'American Medical Association', 'World Health Organization',
+                'American College of Physicians'
+            ]
+        }
+        return conferences_map.get(self.field, conferences_map['CS'])
         
     def _get_search_queries(self) -> List[str]:
         """Return search query keywords based on field"""
@@ -502,8 +583,12 @@ class AbstractCollector:
                 field_filtered = [paper for paper in year_filtered if self.is_field_paper(paper)]
                 print(f"     After {self.field} field filter: {len(field_filtered)}")
                 
+                # Then filter by top conferences
+                top_conf_filtered = [paper for paper in field_filtered if self.is_top_conference_paper(paper)]
+                print(f"     After top conference filter: {len(top_conf_filtered)}")
+                
                 # Finally filter by author presence (any position)
-                author_papers = [paper for paper in field_filtered if self.is_author_in_paper(paper, author_id)]
+                author_papers = [paper for paper in top_conf_filtered if self.is_author_in_paper(paper, author_id)]
                 print(f"     After author filter: {len(author_papers)}")
                 
                 # Cache the filtered results
@@ -542,6 +627,26 @@ class AbstractCollector:
         # Check if contains field keywords
         for keyword in self.field_keywords:
             if keyword in text_to_check:
+                return True
+                
+        return False
+    
+    def is_top_conference_paper(self, paper: Dict) -> bool:
+        """
+        Check if paper is from a top conference/journal
+        
+        Args:
+            paper: Paper information
+            
+        Returns:
+            Whether paper is from top conference/journal
+        """
+        venue = paper.get('venue', '') or ''
+        venue_lower = venue.lower()
+        
+        # Check if venue contains any of the top conference names
+        for top_conf in self.top_conferences:
+            if top_conf.lower() in venue_lower:
                 return True
                 
         return False
@@ -725,7 +830,7 @@ class AbstractCollector:
             print(f"     ❌ Author disqualified: missing {missing_years}")
             return False
     
-    def find_continuous_authors(self, target_count: int = 4, debug_mode: bool = False) -> List[Dict]:
+    def find_continuous_authors(self, target_count: int = 20, debug_mode: bool = False) -> List[Dict]:
         """
         Find specified number of continuous 5-year authors (2020-2024)
         Only return authors that have complete abstracts for all 5 years
@@ -883,7 +988,7 @@ class AbstractCollector:
         with open(progress_file, 'w', encoding='utf-8') as f:
             json.dump(authors, f, ensure_ascii=False, indent=2)
     
-    def run(self, target_authors: int = 4, resume: bool = True, debug_mode: bool = False, fill_missing: bool = False):
+    def run(self, target_authors: int = 20, resume: bool = True, debug_mode: bool = False, fill_missing: bool = False):
         """
         Run complete collection process with resume capability and debug mode
         
@@ -1119,5 +1224,5 @@ if __name__ == "__main__":
     field = "CS"  # Options: CS, Chemistry, Biology, Physics, Medicine
     collector = AbstractCollector(field=field, output_dir=f"output_{field}", api_key=api_key)
     
-    # Run collection process - Goal: up to 4 authors, up to 20 abstracts
-    collector.run(target_authors=4)
+    # Run collection process - Goal: up to 20 authors, up to 100 abstracts
+    collector.run(target_authors=20)

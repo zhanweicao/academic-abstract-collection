@@ -6,8 +6,8 @@ A scalable system to collect academic paper abstracts from Semantic Scholar acro
 
 - Multi-field support: CS, Chemistry, Biology, Physics, Medicine (extensible)
 - Scholar list driven: load field-specific scholar names from `scholars/{FIELD}_scholars.txt`
-- Strict continuity: finds authors with first/second-author papers in each year 2021–2024
-- Exactly one paper per year per author (highest citation count); 4 files per qualified author
+- Strict continuity: finds authors with papers in top conferences in each year 2020–2024
+- Exactly one paper per year per author (highest citation count); 5 files per qualified author
 - Abstract completeness: authors with any missing abstract are skipped entirely
 - Caching and resume: avoids repeated API calls and supports interruption recovery
 - Incremental fill: preserve existing results and only top-up missing authors
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ### Standard run (first pass)
 
-Find up to 25 qualified authors (each with 4 abstracts, one per year 2021–2024) and save files to `output_{FIELD}`.
+Find up to 20 qualified authors (each with 5 abstracts, one per year 2020–2024) and save files to `output_{FIELD}`.
 
 ```python
 # src/cs_abstract_collector.py (main section)
@@ -58,7 +58,7 @@ api_key = "YOUR_SEMANTIC_SCHOLAR_API_KEY"
 field = "CS"  # Options: "CS", "CHEMISTRY", "BIOLOGY", "PHYSICS", "MEDICINE"
 
 collector = AbstractCollector(field=field, output_dir=f"output_{field}", api_key=api_key)
-collector.run(target_authors=25)
+collector.run(target_authors=20)
 ```
 
 Run it:
@@ -68,11 +68,12 @@ python src/cs_abstract_collector.py
 ```
 
 Outputs:
-- Files: `Academic_{Field}_{Year}_{Index}.txt` (Index is the author index; same author has the same index across 4 years)
+- Files: `Academic_{Field}_{Year}_{Index}.txt` (Index is the author index; same author has the same index across 5 years)
 - Report: `output_{FIELD}/collection_report.txt`
 
 Example for one author (index 01):
 ```
+Academic_CS_2020_01.txt
 Academic_CS_2021_01.txt
 Academic_CS_2022_01.txt
 Academic_CS_2023_01.txt
@@ -81,7 +82,7 @@ Academic_CS_2024_01.txt
 
 ### Incremental top-up (only fill missing authors)
 
-If the first run produced fewer than target authors (e.g., 20/25):
+If the first run produced fewer than target authors (e.g., 15/20):
 
 ```bash
 python run_incremental.py
@@ -89,15 +90,16 @@ python run_incremental.py
 
 What it does:
 - Scans existing `output_{FIELD}` and counts complete authors
-- Finds only the missing number of authors (e.g., 5 more to reach 25)
-- Assigns next continuous indices (e.g., 21–25)
+- Finds only the missing number of authors (e.g., 5 more to reach 20)
+- Assigns next continuous indices (e.g., 16–20)
 - Saves files and updates the report
 
 ## Data Quality Rules (strict)
 
 - Field relevance: paper title/venue/abstract must include field keywords
-- Author position: only first or second author papers are eligible
-- Year span: must have papers in each of 2021, 2022, 2023, 2024
+- Top conferences: papers must be from top-tier conferences/journals for the field
+- Author position: any author position is acceptable (not limited to first/second)
+- Year span: must have papers in each of 2020, 2021, 2022, 2023, 2024
 - Abstract completeness: if any chosen paper lacks an abstract, skip the entire author
 - One-per-year: choose one paper per year (highest citation count)
 
