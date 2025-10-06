@@ -1,6 +1,6 @@
 """
 Universal Field Continuous First/Second Author Paper Abstract Collector
-Goal: Find researchers who continuously published papers as first/second authors from 2021-2024
+Goal: Find researchers who continuously published papers as first/second authors from 2020-2024
 Output: Abstract files saved as Academic_Field_Year_Index.txt
 Supports different fields through scholar list files
 """
@@ -296,7 +296,7 @@ class AbstractCollector:
             url = f"{self.base_url}/paper/search"
             params = {
                 'query': query,
-                'year': '2021-2024',
+                'year': '2020-2024',
                 'fields': 'paperId,title,authors,year',
                 'limit': 15  # Reduce to 15 papers for efficiency
             }
@@ -344,7 +344,7 @@ class AbstractCollector:
         if len(authors) < limit:  # If first two strategies didn't find enough authors
             print(f"\nSearching more {self.field} field authors through highly cited papers...")
             
-            for year in [2021, 2022, 2023, 2024]:
+            for year in [2020, 2021, 2022, 2023, 2024]:
                 print(f"   Searching highly cited papers from {year}...")
                 
                 url = f"{self.base_url}/paper/search"
@@ -452,13 +452,13 @@ class AbstractCollector:
         
         Args:
             author_id: Author ID
-            years: Year list, defaults to 2021-2024
+            years: Year list, defaults to 2020-2024
             
         Returns:
             List of papers
         """
         if years is None:
-            years = list(range(2021, 2025))
+            years = list(range(2020, 2025))
         
         # Check cache first
         cache_key = self._get_paper_cache_key(author_id, years)
@@ -580,7 +580,7 @@ class AbstractCollector:
             Whether requirements are met
         """
         if required_years is None:
-            required_years = list(range(2021, 2025))
+            required_years = list(range(2020, 2025))
             
         author_id = author.get('authorId')
         if not author_id:
@@ -607,7 +607,7 @@ class AbstractCollector:
         
         print(f"     Stats: {years_with_papers} years with papers, total {total_papers} papers")
         
-        # Strict condition: Must have CS field first/second author papers in all 4 consecutive years (2021-2024)
+        # Strict condition: Must have CS field first/second author papers in all 5 consecutive years (2020-2024)
         missing_years = []
         for year in required_years:
             year_found = False
@@ -648,7 +648,7 @@ class AbstractCollector:
     
     def check_author_continuity_with_abstracts(self, author: Dict, required_years: List[int] = None) -> bool:
         """
-        Check if author has published first/second author papers continuously for 4 years
+        Check if author has published first/second author papers continuously for 5 years
         AND all selected papers have complete abstracts
         
         Args:
@@ -659,7 +659,7 @@ class AbstractCollector:
             Whether requirements are met (4 years + all abstracts)
         """
         if required_years is None:
-            required_years = list(range(2021, 2025))
+            required_years = list(range(2020, 2025))
             
         author_id = author.get('authorId')
         if not author_id:
@@ -715,9 +715,9 @@ class AbstractCollector:
                 missing_years.append(f"{year}(no_papers)")
                 break
         
-        # Only return True if we have all 4 years with abstracts
-        if len(selected_papers) == 4:
-            print(f"     ✅ Author qualifies: 4 consecutive years with complete abstracts")
+        # Only return True if we have all 5 years with abstracts
+        if len(selected_papers) == 5:
+            print(f"     ✅ Author qualifies: 5 consecutive years with complete abstracts")
             # Store the validated papers for later use
             author['_validated_papers'] = selected_papers
             return True
@@ -727,8 +727,8 @@ class AbstractCollector:
     
     def find_continuous_authors(self, target_count: int = 20, debug_mode: bool = False) -> List[Dict]:
         """
-        Find specified number of continuous 4-year first/second authors (2021-2024)
-        Only return authors that have complete abstracts for all 4 years
+        Find specified number of continuous 5-year first/second authors (2020-2024)
+        Only return authors that have complete abstracts for all 5 years
         
         Args:
             target_count: Target number of authors
@@ -740,7 +740,7 @@ class AbstractCollector:
         if debug_mode:
             return self._load_debug_authors(target_count)
         
-        print(f"Starting to find {target_count} continuous 4-year first/second authors with complete abstracts...")
+        print(f"Starting to find {target_count} continuous 5-year first/second authors with complete abstracts...")
         
         # Search field authors
         field_authors = self.search_field_authors(limit=200)  # Search more to ensure enough continuous authors
@@ -764,7 +764,7 @@ class AbstractCollector:
             else:
                 print(f"   ❌ Author skipped: missing years or abstracts")
         
-        print(f"\nCompleted! Found {len(continuous_authors)} qualified authors with complete 4-year abstracts")
+        print(f"\nCompleted! Found {len(continuous_authors)} qualified authors with complete 5-year abstracts")
         return continuous_authors
     
     def _load_debug_authors(self, target_count: int) -> List[Dict]:
@@ -793,7 +793,7 @@ class AbstractCollector:
     def collect_abstracts(self, authors: List[Dict]) -> List[Dict]:
         """
         Collect abstracts from pre-validated authors
-        Authors have already been validated to have complete 4-year abstracts
+        Authors have already been validated to have complete 5-year abstracts
         
         Args:
             authors: List of pre-validated authors with _validated_papers
@@ -802,7 +802,7 @@ class AbstractCollector:
             List of paper abstracts
         """
         print(f"Collecting abstracts from {len(authors)} pre-validated authors...")
-        print("All authors have been verified to have complete 4-year abstracts")
+        print("All authors have been verified to have complete 5-year abstracts")
         
         all_papers = []
         
@@ -894,13 +894,13 @@ class AbstractCollector:
             fill_missing: Fill missing authors to reach target count (incremental mode)
         """
         if debug_mode:
-            print(f"🐛 DEBUG MODE: {self.field} field continuous 4-year first/second author abstract collection...")
+            print(f"🐛 DEBUG MODE: {self.field} field continuous 5-year first/second author abstract collection...")
             print(f"🚀 No API calls - using pre-generated test data")
         else:
-            print(f"Starting {self.field} field continuous 4-year first/second author abstract collection...")
+            print(f"Starting {self.field} field continuous 5-year first/second author abstract collection...")
         
-        print(f"Goal: Find up to {target_authors} authors, 4 abstracts per author (1 from each year 2021-2024)")
-        print(f"Expected output: Up to {target_authors * 4} abstract files")
+        print(f"Goal: Find up to {target_authors} authors, 5 abstracts per author (1 from each year 2020-2024)")
+        print(f"Expected output: Up to {target_authors * 5} abstract files")
         
         if fill_missing:
             return self._run_incremental_mode(target_authors, debug_mode)
@@ -990,11 +990,11 @@ class AbstractCollector:
                     except:
                         continue
         
-        # Check that each author has all 4 years
+        # Check that each author has all 5 years
         complete_authors = 0
         for author_index in author_indices:
             has_all_years = True
-            for year in [2021, 2022, 2023, 2024]:
+            for year in [2020, 2021, 2022, 2023, 2024]:
                 expected_filename = f"Academic_{self.field}_{year}_{author_index:02d}.txt"
                 if not os.path.exists(os.path.join(self.output_dir, expected_filename)):
                     has_all_years = False
@@ -1099,7 +1099,7 @@ class AbstractCollector:
             f.write(f"\nMissing Files Analysis:\n")
             f.write("-" * 30 + "\n")
             expected_per_year = len(authors)
-            for year in [2021, 2022, 2023, 2024]:
+            for year in [2020, 2021, 2022, 2023, 2024]:
                 actual_count = actual_year_counts.get(str(year), 0)
                 missing_count = expected_per_year - actual_count
                 if missing_count > 0:
