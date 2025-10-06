@@ -1,0 +1,406 @@
+# Chemistry Field Scholars List
+# Each line is a scholar's name, comments start with #
+# Format: Scholar Name
+
+# ===== Nobel Prize Winners & Senior Chemists =====
+Jean-Marie Lehn
+Fraser Stoddart
+Ben Feringa
+Robert Grubbs
+Richard Schrock
+Yves Chauvin
+Ryoji Noyori
+Barry Sharpless
+K. Barry Sharpless
+William Knowles
+Ryōji Noyori
+Ahmed Zewail
+Elias Corey
+Dudley Herschbach
+Yuan Lee
+John Polanyi
+Henry Taube
+Geoffrey Wilkinson
+Ernst Fischer
+William Lipscomb
+Herbert Brown
+Georg Wittig
+Peter Mitchell
+Ilya Prigogine
+Paul Flory
+John Cornforth
+Vladimir Prelog
+Derek Barton
+Odd Hassel
+Lars Onsager
+Melvin Calvin
+John Kendrew
+Max Perutz
+Dorothy Hodgkin
+Robert Woodward
+Marshall Nirenberg
+Robert Holley
+Har Gobind Khorana
+Luis Leloir
+Derek Barton
+Odd Hassel
+
+# ===== Organic Chemistry =====
+E.J. Corey
+Barry Trost
+K.C. Nicolaou
+Samuel Danishefsky
+David Evans
+Clayton Heathcock
+Leo Paquette
+Gilbert Stork
+Paul Wender
+Dale Boger
+Scott Denmark
+Karl Anker Jørgensen
+Benjamin List
+David MacMillan
+Eric Jacobsen
+Amos Smith
+Steven Ley
+Ian Paterson
+Michael Krische
+Varinder Aggarwal
+Alois Fürstner
+Robert Grubbs
+Richard Schrock
+Yves Chauvin
+Chad Mirkin
+Fraser Stoddart
+Jean-Pierre Sauvage
+Sir Fraser Stoddart
+
+# ===== Physical Chemistry =====
+Ahmed Zewail
+John Polanyi
+Dudley Herschbach
+Yuan Lee
+Henry Taube
+Rudolph Marcus
+Melvin Calvin
+Lars Onsager
+Ilya Prigogine
+Paul Flory
+Peter Debye
+Theodore Svedberg
+Sidney Altman
+Thomas Cech
+Robert Curl
+Harold Kroto
+Richard Smalley
+Harry Kroto
+Sir Harold Kroto
+Richard Smalley
+Robert Curl
+Wolfgang Ketterle
+Eric Cornell
+Carl Wieman
+John Hall
+Theodor Hänsch
+Roy Glauber
+John L. Hall
+Theodor W. Hänsch
+
+# ===== Inorganic Chemistry =====
+Geoffrey Wilkinson
+Ernst Fischer
+William Lipscomb
+Henry Taube
+Rudolph Marcus
+John Bercaw
+Richard Schrock
+Robert Grubbs
+Chad Mirkin
+Maurice Brookhart
+John Hartwig
+Stephen Buchwald
+Gregory Fu
+Mark Lautens
+Fraser Stoddart
+Jean-Pierre Sauvage
+Ben Feringa
+Harry Gray
+Jack Halpern
+Richard Holm
+F. Albert Cotton
+Geoffrey Wilkinson
+Malcolm Green
+Christopher Cummins
+
+# ===== Analytical Chemistry =====
+James Lovelock
+Klaus Biemann
+John Fenn
+Koichi Tanaka
+Kurt Wüthrich
+John Pople
+Walter Kohn
+John Pople
+Arieh Warshel
+Michael Levitt
+Martin Karplus
+John Fenn
+Koichi Tanaka
+Kurt Wüthrich
+Klaus Biemann
+Richard Zare
+Norman Dovichi
+Gary Hieftje
+Peter Carr
+James Jorgenson
+
+# ===== Biochemistry & Chemical Biology =====
+Roger Kornberg
+Ada Yonath
+Venkatraman Ramakrishnan
+Thomas Steitz
+Peter Agre
+Roderick MacKinnon
+Aaron Ciechanover
+Avram Hershko
+Irwin Rose
+John Walker
+Paul Boyer
+Jens Skou
+Robert Huber
+Hartmut Michel
+Johann Deisenhofer
+Hans Deisenhofer
+Robert Huber
+Hartmut Michel
+Johann Deisenhofer
+Aaron Ciechanover
+Avram Hershko
+Irwin Rose
+
+# ===== Materials Chemistry & Nanotechnology =====
+Chad Mirkin
+Charles Lieber
+Paul Alivisatos
+A. Paul Alivisatos
+Charles Lieber
+Chad Mirkin
+Peidong Yang
+Yi Cui
+Hongjie Dai
+Zhong Lin Wang
+Charles Lieber
+Paul Alivisatos
+Chad Mirkin
+Peidong Yang
+Yi Cui
+Hongjie Dai
+Zhong Lin Wang
+Younan Xia
+Naomi Halas
+Jennifer Lewis
+Zhenan Bao
+Yi Cui
+Hongjie Dai
+Zhong Lin Wang
+Peidong Yang
+
+# ===== Catalysis =====
+Robert Grubbs
+Richard Schrock
+Yves Chauvin
+John Bercaw
+Maurice Brookhart
+John Hartwig
+Stephen Buchwald
+Gregory Fu
+Mark Lautens
+Benjamin List
+David MacMillan
+Eric Jacobsen
+Amos Smith
+Steven Ley
+Ian Paterson
+Michael Krische
+Varinder Aggarwal
+Alois Fürstner
+Robert Grubbs
+Richard Schrock
+Yves Chauvin
+
+# ===== Theoretical Chemistry =====
+Walter Kohn
+John Pople
+Arieh Warshel
+Michael Levitt
+Martin Karplus
+Walter Kohn
+John Pople
+Arieh Warshel
+Michael Levitt
+Martin Karplus
+Rudolph Marcus
+Henry Eyring
+Michael Polanyi
+Linus Pauling
+Walter Kohn
+John Pople
+
+# ===== Green Chemistry & Sustainability =====
+Paul Anastas
+John Warner
+Barry Trost
+Roger Sheldon
+Paul Anastas
+John Warner
+Barry Trost
+Roger Sheldon
+James Clark
+Martyn Poliakoff
+Walter Leitner
+Peter Wasserscheid
+Paul Anastas
+John Warner
+
+# ===== Medicinal Chemistry & Drug Discovery =====
+James Black
+Gertrude Elion
+George Hitchings
+Robert Furchgott
+Louis Ignarro
+Ferid Murad
+James Black
+Gertrude Elion
+George Hitchings
+Robert Furchgott
+Louis Ignarro
+Ferid Murad
+Samuel Danishefsky
+K.C. Nicolaou
+Dale Boger
+Samuel Danishefsky
+K.C. Nicolaou
+Dale Boger
+Paul Wender
+Clayton Heathcock
+
+# ===== Polymer Chemistry =====
+Paul Flory
+Hermann Staudinger
+Giulio Natta
+Karl Ziegler
+Paul Flory
+Hermann Staudinger
+Giulio Natta
+Karl Ziegler
+Jean-Marie Lehn
+Fraser Stoddart
+Ben Feringa
+Jean-Marie Lehn
+Fraser Stoddart
+Ben Feringa
+
+# ===== Supramolecular Chemistry =====
+Jean-Marie Lehn
+Fraser Stoddart
+Ben Feringa
+Jean-Pierre Sauvage
+Fraser Stoddart
+Ben Feringa
+Jean-Pierre Sauvage
+Jean-Marie Lehn
+Fraser Stoddart
+Ben Feringa
+Jean-Pierre Sauvage
+
+# ===== Computational Chemistry =====
+Walter Kohn
+John Pople
+Arieh Warshel
+Michael Levitt
+Martin Karplus
+Walter Kohn
+John Pople
+Arieh Warshel
+Michael Levitt
+Martin Karplus
+Henry Eyring
+Michael Polanyi
+Linus Pauling
+
+# ===== Electrochemistry =====
+Henry Taube
+Rudolph Marcus
+Henry Taube
+Rudolph Marcus
+John Goodenough
+Stanley Whittingham
+Akira Yoshino
+John Goodenough
+Stanley Whittingham
+Akira Yoshino
+
+# ===== Photochemistry =====
+Ahmed Zewail
+Ahmed Zewail
+Rudolph Marcus
+Henry Taube
+Ahmed Zewail
+Rudolph Marcus
+Henry Taube
+
+# ===== Environmental Chemistry =====
+James Lovelock
+James Lovelock
+Klaus Biemann
+John Fenn
+Koichi Tanaka
+Kurt Wüthrich
+
+# ===== Food Chemistry =====
+Klaus Biemann
+John Fenn
+Koichi Tanaka
+Kurt Wüthrich
+Klaus Biemann
+John Fenn
+
+# ===== Forensic Chemistry =====
+Klaus Biemann
+John Fenn
+Koichi Tanaka
+Kurt Wüthrich
+Klaus Biemann
+John Fenn
+
+# ===== Industrial Chemistry =====
+Paul Anastas
+John Warner
+Barry Trost
+Roger Sheldon
+Paul Anastas
+John Warner
+Barry Trost
+Roger Sheldon
+James Clark
+Martyn Poliakoff
+
+# ===== Emerging Field Researchers =====
+Benjamin List
+David MacMillan
+Eric Jacobsen
+Amos Smith
+Steven Ley
+Ian Paterson
+Michael Krische
+Varinder Aggarwal
+Alois Fürstner
+Benjamin List
+David MacMillan
+Eric Jacobsen
+Amos Smith
+Steven Ley
+Ian Paterson
+Michael Krische
+Varinder Aggarwal
+Alois Fürstner

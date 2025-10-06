@@ -1,0 +1,410 @@
+# Medicine Field Scholars List
+# Each line is a scholar's name, comments start with #
+# Format: Scholar Name
+
+# ===== Nobel Prize Winners & Senior Medical Researchers =====
+Robert Koch
+Louis Pasteur
+Alexander Fleming
+Howard Florey
+Ernst Chain
+Selman Waksman
+Gerhard Domagk
+Paul Ehrlich
+Elie Metchnikoff
+Emil von Behring
+Ross Ronald
+Charles Laveran
+Alphonse Laveran
+Robert Bárány
+Jules Bordet
+August Krogh
+Otto Meyerhof
+Archibald Hill
+Frederick Banting
+John Macleod
+Willem Einthoven
+Karl Landsteiner
+Thomas Morgan
+George Minot
+William Murphy
+George Whipple
+Hans Spemann
+Henry Dale
+Otto Loewi
+Albert Szent-Györgyi
+Corneille Heymans
+Gerhard Domagk
+Henrik Dam
+Edward Doisy
+Joseph Erlanger
+Herbert Gasser
+Alexander Fleming
+Ernst Chain
+Howard Florey
+Hermann Muller
+Carl Cori
+Gerty Cori
+Bernardo Houssay
+Paul Müller
+Walter Hess
+António Egas Moniz
+Edward Kendall
+Tadeus Reichstein
+Philip Hench
+Max Theiler
+Selman Waksman
+Hans Krebs
+Fritz Lipmann
+John Enders
+Thomas Weller
+Frederick Robbins
+Axel Theorell
+André Cournand
+Werner Forssmann
+Dickinson Richards
+Daniel Bovet
+
+# ===== Clinical Medicine =====
+William Osler
+Harvey Cushing
+Paul Dudley White
+Michael DeBakey
+Christiaan Barnard
+Norman Shumway
+Robert Jarvik
+Willem Kolff
+Belding Scribner
+John Gibbon
+Denton Cooley
+C. Walton Lillehei
+F. John Lewis
+John Kirklin
+Donald Ross
+Albert Starr
+Charles Bailey
+Dwight Harken
+Clarence Dennis
+John Gibbon
+Michael DeBakey
+Christiaan Barnard
+Norman Shumway
+Robert Jarvik
+Willem Kolff
+Belding Scribner
+John Gibbon
+Denton Cooley
+C. Walton Lillehei
+F. John Lewis
+John Kirklin
+Donald Ross
+Albert Starr
+Charles Bailey
+Dwight Harken
+Clarence Dennis
+
+# ===== Pharmacology & Drug Discovery =====
+James Black
+Gertrude Elion
+George Hitchings
+Robert Furchgott
+Louis Ignarro
+Ferid Murad
+Samuel Danishefsky
+K.C. Nicolaou
+Dale Boger
+Paul Wender
+Clayton Heathcock
+Gilbert Stork
+Leo Paquette
+Samuel Danishefsky
+K.C. Nicolaou
+Dale Boger
+Paul Wender
+Clayton Heathcock
+Gilbert Stork
+Leo Paquette
+Samuel Danishefsky
+K.C. Nicolaou
+Dale Boger
+Paul Wender
+Clayton Heathcock
+Gilbert Stork
+Leo Paquette
+
+# ===== Immunology & Infectious Diseases =====
+Paul Ehrlich
+Elie Metchnikoff
+Jules Bordet
+Karl Landsteiner
+Max Theiler
+John Enders
+Thomas Weller
+Frederick Robbins
+Daniel Gajdusek
+Baruch Blumberg
+Rosalyn Yalow
+Roger Guillemin
+Andrew Schally
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+Stanley Cohen
+Rita Levi-Montalcini
+
+# ===== Neuroscience & Neurology =====
+Santiago Ramón y Cajal
+Camillo Golgi
+Charles Sherrington
+Edgar Adrian
+Lord Edgar Douglas Adrian
+Bernard Katz
+John Eccles
+Alan Hodgkin
+Andrew Huxley
+Erwin Neher
+Bert Sakmann
+Paul Greengard
+Eric Kandel
+Arvid Carlsson
+Torsten Wiesel
+David Hubel
+Roger Sperry
+Gerald Edelman
+Rodney Porter
+Cesar Milstein
+Georges Köhler
+Niels Jerne
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Cardiology =====
+William Osler
+Harvey Cushing
+Paul Dudley White
+Michael DeBakey
+Christiaan Barnard
+Norman Shumway
+Robert Jarvik
+Willem Kolff
+Belding Scribner
+John Gibbon
+Denton Cooley
+C. Walton Lillehei
+F. John Lewis
+John Kirklin
+Donald Ross
+Albert Starr
+Charles Bailey
+Dwight Harken
+Clarence Dennis
+John Gibbon
+Michael DeBakey
+Christiaan Barnard
+Norman Shumway
+Robert Jarvik
+Willem Kolff
+Belding Scribner
+John Gibbon
+Denton Cooley
+C. Walton Lillehei
+F. John Lewis
+John Kirklin
+Donald Ross
+Albert Starr
+Charles Bailey
+Dwight Harken
+Clarence Dennis
+
+# ===== Oncology & Cancer Research =====
+Peyton Rous
+Howard Temin
+David Baltimore
+Renato Dulbecco
+Baruch Blumberg
+Daniel Carleton Gajdusek
+Roger Guillemin
+Andrew Schally
+Rosalyn Yalow
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+Stanley Cohen
+Rita Levi-Montalcini
+
+# ===== Surgery & Transplantation =====
+William Osler
+Harvey Cushing
+Paul Dudley White
+Michael DeBakey
+Christiaan Barnard
+Norman Shumway
+Robert Jarvik
+Willem Kolff
+Belding Scribner
+John Gibbon
+Denton Cooley
+C. Walton Lillehei
+F. John Lewis
+John Kirklin
+Donald Ross
+Albert Starr
+Charles Bailey
+Dwight Harken
+Clarence Dennis
+John Gibbon
+Michael DeBakey
+Christiaan Barnard
+Norman Shumway
+Robert Jarvik
+Willem Kolff
+Belding Scribner
+John Gibbon
+Denton Cooley
+C. Walton Lillehei
+F. John Lewis
+John Kirklin
+Donald Ross
+Albert Starr
+Charles Bailey
+Dwight Harken
+Clarence Dennis
+
+# ===== Public Health & Epidemiology =====
+John Snow
+Florence Nightingale
+Louis Pasteur
+Robert Koch
+Paul Ehrlich
+Elie Metchnikoff
+Jules Bordet
+Karl Landsteiner
+Max Theiler
+John Enders
+Thomas Weller
+Frederick Robbins
+Daniel Gajdusek
+Baruch Blumberg
+Rosalyn Yalow
+Roger Guillemin
+Andrew Schally
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Pathology & Diagnostics =====
+Rudolf Virchow
+Robert Koch
+Louis Pasteur
+Paul Ehrlich
+Elie Metchnikoff
+Jules Bordet
+Karl Landsteiner
+Max Theiler
+John Enders
+Thomas Weller
+Frederick Robbins
+Daniel Gajdusek
+Baruch Blumberg
+Rosalyn Yalow
+Roger Guillemin
+Andrew Schally
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Pediatrics =====
+Abraham Jacobi
+Luther Emmett Holt
+John Howland
+Edwards Park
+William Ladd
+Robert Gross
+C. Everett Koop
+Abraham Jacobi
+Luther Emmett Holt
+John Howland
+Edwards Park
+William Ladd
+Robert Gross
+C. Everett Koop
+Abraham Jacobi
+Luther Emmett Holt
+John Howland
+Edwards Park
+William Ladd
+Robert Gross
+C. Everett Koop
+
+# ===== Psychiatry & Mental Health =====
+Sigmund Freud
+Carl Jung
+Alfred Adler
+Emil Kraepelin
+Eugen Bleuler
+Kurt Schneider
+Karl Jaspers
+Ludwig Binswanger
+Medard Boss
+R.D. Laing
+Thomas Szasz
+Aaron Beck
+Albert Ellis
+Marsha Linehan
+Sigmund Freud
+Carl Jung
+Alfred Adler
+Emil Kraepelin
+Eugen Bleuler
+Kurt Schneider
+Karl Jaspers
+Ludwig Binswanger
+Medard Boss
+R.D. Laing
+Thomas Szasz
+Aaron Beck
+Albert Ellis
+Marsha Linehan
+
+# ===== Radiology & Medical Imaging =====
+Wilhelm Röntgen
+Marie Curie
+Pierre Curie
+Henri Becquerel
+Ernest Rutherford
+James Chadwick
+Enrico Fermi
+Otto Hahn
+Lise Meitner
+Otto Frisch
+Niels Bohr
+Aage Bohr
+Ben Mottelson
+Leo James Rainwater
+Wilhelm Röntgen
+Marie Curie
+Pierre Curie
+Henri Becquerel
+Ernest Rutherford
+James Chadwick
+Enrico Fermi
+Otto Hahn
+Lise Meitner
+Otto Frisch
+Niels Bohr
+Aage Bohr
+Ben Mottelson
+Leo James Rainwater

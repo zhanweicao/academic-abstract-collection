@@ -1,0 +1,301 @@
+# Physics Field Scholars List
+# Each line is a scholar's name, comments start with #
+# Format: Scholar Name
+
+# ===== Nobel Prize Winners & Senior Physicists =====
+Albert Einstein
+Niels Bohr
+Werner Heisenberg
+Erwin Schrödinger
+Max Planck
+Paul Dirac
+Enrico Fermi
+Wolfgang Pauli
+Richard Feynman
+Murray Gell-Mann
+Steven Weinberg
+Sheldon Glashow
+Abdus Salam
+Carlo Rubbia
+Simon van der Meer
+Leon Lederman
+Melvin Schwartz
+Jack Steinberger
+Jerome Friedman
+Henry Kendall
+Richard Taylor
+Martin Perl
+Frederick Reines
+Clyde Cowan
+
+# ===== Quantum Mechanics =====
+Stephen Hawking
+Roger Penrose
+Kip Thorne
+Rainer Weiss
+Barry Barish
+Edward Witten
+Juan Maldacena
+Nima Arkani-Hamed
+Subir Sachdev
+John Preskill
+Alexei Kitaev
+Frank Wilczek
+David Gross
+Hugh David Politzer
+Gerard 't Hooft
+Martinus Veltman
+Carlo Rubbia
+Simon van der Meer
+Leon Lederman
+Melvin Schwartz
+Jack Steinberger
+Jerome Friedman
+Henry Kendall
+Richard Taylor
+Martin Perl
+Frederick Reines
+Takaaki Kajita
+Arthur McDonald
+Peter Higgs
+François Englert
+Serge Haroche
+David Wineland
+
+# ===== Cosmology & Astrophysics =====
+Brian Schmidt
+Saul Perlmutter
+Adam Riess
+Charles Kao
+Willard Boyle
+George Smith
+John Mather
+George Smoot
+Raymond Davis
+Masatoshi Koshiba
+Riccardo Giacconi
+Russell Hulse
+Joseph Taylor
+Subrahmanyan Chandrasekhar
+William Fowler
+Arno Penzias
+Robert Wilson
+James Peebles
+Michel Mayor
+Didier Queloz
+James Peebles
+Michel Mayor
+Didier Queloz
+
+# ===== Condensed Matter Physics =====
+Philip Anderson
+Nevill Mott
+John Van Vleck
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+
+# ===== Nuclear Physics =====
+Ernest Rutherford
+James Chadwick
+Enrico Fermi
+Otto Hahn
+Lise Meitner
+Otto Frisch
+Niels Bohr
+Aage Bohr
+Ben Mottelson
+Leo James Rainwater
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+
+# ===== Particle Physics =====
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+
+# ===== Theoretical Physics =====
+Albert Einstein
+Niels Bohr
+Werner Heisenberg
+Erwin Schrödinger
+Max Planck
+Paul Dirac
+Enrico Fermi
+Wolfgang Pauli
+Richard Feynman
+Murray Gell-Mann
+Steven Weinberg
+Sheldon Glashow
+Abdus Salam
+Stephen Hawking
+Roger Penrose
+Kip Thorne
+Edward Witten
+Juan Maldacena
+Nima Arkani-Hamed
+Subir Sachdev
+John Preskill
+Alexei Kitaev
+Frank Wilczek
+David Gross
+Hugh David Politzer
+Gerard 't Hooft
+Martinus Veltman
+
+# ===== Experimental Physics =====
+Ernest Rutherford
+James Chadwick
+Enrico Fermi
+Otto Hahn
+Lise Meitner
+Otto Frisch
+Niels Bohr
+Aage Bohr
+Ben Mottelson
+Leo James Rainwater
+Carlo Rubbia
+Simon van der Meer
+Leon Lederman
+Melvin Schwartz
+Jack Steinberger
+Jerome Friedman
+Henry Kendall
+Richard Taylor
+Martin Perl
+Frederick Reines
+Takaaki Kajita
+Arthur McDonald
+Peter Higgs
+François Englert
+Serge Haroche
+David Wineland
+Brian Schmidt
+Saul Perlmutter
+Adam Riess
+Charles Kao
+Willard Boyle
+George Smith
+John Mather
+George Smoot
+Raymond Davis
+Masatoshi Koshiba
+Riccardo Giacconi
+Russell Hulse
+Joseph Taylor
+Subrahmanyan Chandrasekhar
+William Fowler
+Arno Penzias
+Robert Wilson
+James Peebles
+Michel Mayor
+Didier Queloz
+
+# ===== Optics & Photonics =====
+Charles Kao
+Willard Boyle
+George Smith
+John Mather
+George Smoot
+Raymond Davis
+Masatoshi Koshiba
+Riccardo Giacconi
+Russell Hulse
+Joseph Taylor
+Subrahmanyan Chandrasekhar
+William Fowler
+Arno Penzias
+Robert Wilson
+James Peebles
+Michel Mayor
+Didier Queloz
+Charles Kao
+Willard Boyle
+George Smith
+
+# ===== Plasma Physics =====
+Hannes Alfvén
+Louis Néel
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+Murray Gell-Mann
+Yuval Ne'eman
+
+# ===== Solid State Physics =====
+Philip Anderson
+Nevill Mott
+John Van Vleck
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi
+Wolfgang Pauli
+Felix Bloch
+Edward Purcell
+Isidor Rabi

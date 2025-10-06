@@ -1,0 +1,276 @@
+# Biology Field Scholars List
+# Each line is a scholar's name, comments start with #
+# Format: Scholar Name
+
+# ===== Nobel Prize Winners & Senior Biologists =====
+James Watson
+Francis Crick
+Maurice Wilkins
+Rosalind Franklin
+Linus Pauling
+Frederick Sanger
+Max Perutz
+John Kendrew
+Dorothy Hodgkin
+Robert Woodward
+Marshall Nirenberg
+Robert Holley
+Har Gobind Khorana
+Luis Leloir
+
+# ===== Molecular Biology & Genetics =====
+Sydney Brenner
+François Jacob
+Jacques Monod
+André Lwoff
+Joshua Lederberg
+Edward Tatum
+George Beadle
+Severo Ochoa
+Arthur Kornberg
+Hans Krebs
+Fritz Lipmann
+Albert Claude
+Christian de Duve
+George Palade
+David Baltimore
+Howard Temin
+Renato Dulbecco
+Baruch Blumberg
+Daniel Carleton Gajdusek
+Roger Guillemin
+Andrew Schally
+Rosalyn Yalow
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Cell Biology =====
+Keith Porter
+Don Fawcett
+Eduardo De Robertis
+Hugh Huxley
+Jean Hanson
+Andrew Huxley
+Alan Hodgkin
+Bernard Katz
+John Eccles
+Erwin Neher
+Bert Sakmann
+Paul Greengard
+Eric Kandel
+Arvid Carlsson
+Torsten Wiesel
+David Hubel
+Roger Sperry
+Gerald Edelman
+Rodney Porter
+Cesar Milstein
+Georges Köhler
+Niels Jerne
+
+# ===== Developmental Biology =====
+Christian Nüsslein-Volhard
+Eric Wieschaus
+Edward Lewis
+John Gurdon
+Shinya Yamanaka
+Mario Capecchi
+Martin Evans
+Oliver Smithies
+Sydney Brenner
+H. Robert Horvitz
+John Sulston
+
+# ===== Evolutionary Biology =====
+Charles Darwin
+Alfred Russel Wallace
+Ronald Fisher
+J.B.S. Haldane
+Sewall Wright
+Theodosius Dobzhansky
+Ernst Mayr
+George Gaylord Simpson
+G. Ledyard Stebbins
+Motoo Kimura
+Richard Lewontin
+John Maynard Smith
+W.D. Hamilton
+Robert Trivers
+Stephen Jay Gould
+Niles Eldredge
+Lynn Margulis
+Carl Woese
+Norman Pace
+Craig Venter
+Francis Collins
+Eric Lander
+David Botstein
+
+# ===== Ecology & Environmental Biology =====
+Eugene Odum
+Howard Odum
+Robert MacArthur
+E.O. Wilson
+Jared Diamond
+Paul Ehrlich
+Anne Ehrlich
+Gretchen Daily
+Peter Vitousek
+Harold Mooney
+Jane Lubchenco
+Simon Levin
+Stephen Hubbell
+Robert May
+John Lawton
+Stuart Pimm
+David Tilman
+Peter Raven
+Thomas Lovejoy
+Norman Myers
+
+# ===== Neuroscience =====
+Santiago Ramón y Cajal
+Camillo Golgi
+Charles Sherrington
+Edgar Adrian
+Lord Edgar Douglas Adrian
+Bernard Katz
+John Eccles
+Alan Hodgkin
+Andrew Huxley
+Erwin Neher
+Bert Sakmann
+Paul Greengard
+Eric Kandel
+Arvid Carlsson
+Torsten Wiesel
+David Hubel
+Roger Sperry
+Gerald Edelman
+Rodney Porter
+Cesar Milstein
+Georges Köhler
+Niels Jerne
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Immunology =====
+Paul Ehrlich
+Elie Metchnikoff
+Jules Bordet
+Karl Landsteiner
+Max Theiler
+John Enders
+Thomas Weller
+Frederick Robbins
+Daniel Gajdusek
+Baruch Blumberg
+Rosalyn Yalow
+Roger Guillemin
+Andrew Schally
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Biochemistry & Structural Biology =====
+Frederick Sanger
+Max Perutz
+John Kendrew
+Dorothy Hodgkin
+Robert Huber
+Hartmut Michel
+Johann Deisenhofer
+Hans Deisenhofer
+Aaron Ciechanover
+Avram Hershko
+Irwin Rose
+John Walker
+Paul Boyer
+Jens Skou
+
+# ===== Genomics & Bioinformatics =====
+Craig Venter
+Francis Collins
+Eric Lander
+David Botstein
+Jennifer Doudna
+Emmanuelle Charpentier
+Feng Zhang
+David Liu
+George Church
+Jay Keasling
+Pamela Silver
+James Collins
+Uri Alon
+Marc Kirschner
+Tony Pawson
+Michael Elowitz
+Stanislas Leibler
+
+# ===== Cancer Biology & Oncology =====
+Peyton Rous
+Howard Temin
+David Baltimore
+Renato Dulbecco
+Baruch Blumberg
+Daniel Carleton Gajdusek
+Roger Guillemin
+Andrew Schally
+Rosalyn Yalow
+Barbara McClintock
+Rita Levi-Montalcini
+Stanley Cohen
+Susumu Tonegawa
+Michael Brown
+Joseph Goldstein
+
+# ===== Stem Cell Biology =====
+John Gurdon
+Shinya Yamanaka
+Mario Capecchi
+Martin Evans
+Oliver Smithies
+Sydney Brenner
+H. Robert Horvitz
+John Sulston
+Eric Wieschaus
+Christian Nüsslein-Volhard
+Edward Lewis
+
+# ===== Systems Biology =====
+Hiroaki Kitano
+Leroy Hood
+James Collins
+Uri Alon
+Marc Kirschner
+Tony Pawson
+Michael Elowitz
+Stanislas Leibler
+Pamela Silver
+
+# ===== Synthetic Biology =====
+Drew Endy
+Tom Knight
+Jay Keasling
+Pamela Silver
+James Collins
+Uri Alon
+Marc Kirschner
+Tony Pawson
+Michael Elowitz
+Stanislas Leibler
+Pamela Silver
+James Collins
+Uri Alon
+Marc Kirschner
+Tony Pawson
+Michael Elowitz
+Stanislas Leibler
