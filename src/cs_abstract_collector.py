@@ -1,6 +1,6 @@
 """
-Universal Field Continuous First/Second Author Paper Abstract Collector
-Goal: Find researchers who continuously published papers as first/second authors from 2020-2024
+Universal Field Continuous Author Paper Abstract Collector
+Goal: Find researchers who continuously published papers as any author from 2020-2024
 Output: Abstract files saved as Academic_Field_Year_Index.txt
 Supports different fields through scholar list files
 """
@@ -502,9 +502,9 @@ class AbstractCollector:
                 field_filtered = [paper for paper in year_filtered if self.is_field_paper(paper)]
                 print(f"     After {self.field} field filter: {len(field_filtered)}")
                 
-                # Finally filter by first or second author
-                author_papers = [paper for paper in field_filtered if self.is_first_or_second_author(paper, author_id)]
-                print(f"     After first/second author filter: {len(author_papers)}")
+                # Finally filter by author presence (any position)
+                author_papers = [paper for paper in field_filtered if self.is_author_in_paper(paper, author_id)]
+                print(f"     After author filter: {len(author_papers)}")
                 
                 # Cache the filtered results
                 self._save_to_cache("author_papers", cache_key, author_papers)
@@ -546,24 +546,24 @@ class AbstractCollector:
                 
         return False
     
-    def is_first_or_second_author(self, paper: Dict, author_id: str) -> bool:
+    def is_author_in_paper(self, paper: Dict, author_id: str) -> bool:
         """
-        Determine if specified author is first or second author of the paper
+        Determine if specified author is any author of the paper (any position)
         
         Args:
             paper: Paper information
             author_id: Author ID
             
         Returns:
-            Whether it's first or second author
+            Whether the author is in the paper
         """
         authors = paper.get('authors', [])
         if not authors or len(authors) < 1:
             return False
             
-        # Check if there's a match in the first two authors
-        for i in range(min(2, len(authors))):
-            if authors[i].get('authorId') == author_id:
+        # Check if there's a match in any author position
+        for author in authors:
+            if author.get('authorId') == author_id:
                 return True
                 
         return False
@@ -607,7 +607,7 @@ class AbstractCollector:
         
         print(f"     Stats: {years_with_papers} years with papers, total {total_papers} papers")
         
-        # Strict condition: Must have CS field first/second author papers in all 5 consecutive years (2020-2024)
+        # Strict condition: Must have CS field papers in all 5 consecutive years (2020-2024)
         missing_years = []
         for year in required_years:
             year_found = False
@@ -648,7 +648,7 @@ class AbstractCollector:
     
     def check_author_continuity_with_abstracts(self, author: Dict, required_years: List[int] = None) -> bool:
         """
-        Check if author has published first/second author papers continuously for 5 years
+        Check if author has published papers continuously for 5 years
         AND all selected papers have complete abstracts
         
         Args:
@@ -725,9 +725,9 @@ class AbstractCollector:
             print(f"     ❌ Author disqualified: missing {missing_years}")
             return False
     
-    def find_continuous_authors(self, target_count: int = 20, debug_mode: bool = False) -> List[Dict]:
+    def find_continuous_authors(self, target_count: int = 4, debug_mode: bool = False) -> List[Dict]:
         """
-        Find specified number of continuous 5-year first/second authors (2020-2024)
+        Find specified number of continuous 5-year authors (2020-2024)
         Only return authors that have complete abstracts for all 5 years
         
         Args:
@@ -740,7 +740,7 @@ class AbstractCollector:
         if debug_mode:
             return self._load_debug_authors(target_count)
         
-        print(f"Starting to find {target_count} continuous 5-year first/second authors with complete abstracts...")
+        print(f"Starting to find {target_count} continuous 5-year authors with complete abstracts...")
         
         # Search field authors
         field_authors = self.search_field_authors(limit=200)  # Search more to ensure enough continuous authors
@@ -883,7 +883,7 @@ class AbstractCollector:
         with open(progress_file, 'w', encoding='utf-8') as f:
             json.dump(authors, f, ensure_ascii=False, indent=2)
     
-    def run(self, target_authors: int = 20, resume: bool = True, debug_mode: bool = False, fill_missing: bool = False):
+    def run(self, target_authors: int = 4, resume: bool = True, debug_mode: bool = False, fill_missing: bool = False):
         """
         Run complete collection process with resume capability and debug mode
         
@@ -894,10 +894,10 @@ class AbstractCollector:
             fill_missing: Fill missing authors to reach target count (incremental mode)
         """
         if debug_mode:
-            print(f"🐛 DEBUG MODE: {self.field} field continuous 5-year first/second author abstract collection...")
+            print(f"🐛 DEBUG MODE: {self.field} field continuous 5-year author abstract collection...")
             print(f"🚀 No API calls - using pre-generated test data")
         else:
-            print(f"Starting {self.field} field continuous 5-year first/second author abstract collection...")
+            print(f"Starting {self.field} field continuous 5-year author abstract collection...")
         
         print(f"Goal: Find up to {target_authors} authors, 5 abstracts per author (1 from each year 2020-2024)")
         print(f"Expected output: Up to {target_authors * 5} abstract files")
@@ -1119,5 +1119,5 @@ if __name__ == "__main__":
     field = "CS"  # Options: CS, Chemistry, Biology, Physics, Medicine
     collector = AbstractCollector(field=field, output_dir=f"output_{field}", api_key=api_key)
     
-    # Run collection process - Goal: up to 25 authors, up to 100 abstracts
-    collector.run(target_authors=25)
+    # Run collection process - Goal: up to 4 authors, up to 20 abstracts
+    collector.run(target_authors=4)
